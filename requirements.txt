@@ -1,6 +1,7 @@
-FLASK
-sklearn
+Flask
+scikit-learn
 pandas
 numpy
-matplotlib
+gunicorn
+
 #*** pip install -r requirements.txt***
