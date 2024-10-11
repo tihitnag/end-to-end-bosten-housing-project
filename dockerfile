@@ -25,4 +25,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE $PORT
 
 # Start the Gunicorn server with 4 workers and bind it to the dynamically assigned port
-CMD ["gunicorn", "--workers=4", "--bind=0.0.0.0:$PORT", "app:app"]
+CMD gunicorn --workers=4  --bind 0.0.0.0:$PORT app:app
