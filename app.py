@@ -23,9 +23,16 @@ def predict_api():
     print(new_data)
     output=model.predict(new_data)
     print(output[0])
- 
     return jsonify(output[0])
-
+@app.route('/predict',methods=['POST'])
+def predict():
+    #for each x  in the form change it to float and put iti in form 
+    data=[float(x) for x in request.form.values()]
+    final_output=scaler.transform(np.array(data).reshape(1,-1))
+    print(final_output)
+    output=model.predict(final_output)[0]
+    return render_template('home.html',prediction_text='the house predition is {}'.format(output))# palace holder
+    
 if __name__=='__main__':
     app.run(debug=True)
     
