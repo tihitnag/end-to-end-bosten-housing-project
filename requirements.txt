@@ -1,7 +1,0 @@
-Flask
-scikit-learn
-pandas
-numpy
-gunicorn
-
-#*** pip install -r requirements.txt***
